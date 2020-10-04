@@ -3,7 +3,7 @@ const { exec } = require('child_process');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
+app.all('/', (req, res) => {
 	try {
 		const { dir } = req.query;
 		const command = `cd ${dir}; git pull;`;
